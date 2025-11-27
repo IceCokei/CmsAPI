@@ -18,25 +18,25 @@
 
 ## ✨ 功能特性
 
-#### 用户系统
+####   用户系统
 - 用户注册与登录认证
 - VIP 会员管理
 - 积分奖励系统
 - 邀请返利机制
 
-#### 视频管理
+####   视频管理
 - 视频详情与搜索
 - 分类筛选
 - 热门排行榜
 - 更新日程管理
 
-####互动功能
+####  互动功能
 - 多级评论系统
 - 实时弹幕
 - 收藏功能
 - 视频求片与更新提醒
 
-####系统管理
+####  系统管理
 - 广告管理
 - 系统公告
 - 应用版本更新
@@ -68,7 +68,7 @@ $client->sendComment([
 
 ## 核心概念
 
-#### 身份验证
+####   身份验证
 
 所有需要认证的接口都需要在请求头中包含 `app-user-token`：
 
@@ -120,7 +120,7 @@ const parsed = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
 
 ### 1. 初始化
 
-#### `GET /api.php/getappapi.index/init`
+####   `GET /api.php/getappapi.index/init`
 
 初始化应用并获取首页所有数据。
 
@@ -144,7 +144,7 @@ const parsed = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
 
 ### 2. 视频相关
 
-#### `POST /api.php/getappapi.index/vodDetail`
+####   `POST /api.php/getappapi.index/vodDetail`
 
 获取视频详细信息。
 
@@ -176,7 +176,7 @@ const parsed = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
 }
 ```
 
-#### `POST /api.php/getappapi.index/searchList`
+####   `POST /api.php/getappapi.index/searchList`
 
 根据关键词搜索视频。
 
@@ -187,7 +187,7 @@ const parsed = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
 | `page` | int | ✅ | 页码 |
 | `type_id` | int | ❌ | 分类 ID |
 
-#### `POST /api.php/getappapi.index/typeFilterVodList`
+####   `POST /api.php/getappapi.index/typeFilterVodList`
 
 多条件筛选视频列表。
 
@@ -214,7 +214,7 @@ curl -X POST https://api.example.com/vodList \
   }'
 ```
 
-#### `POST /api.php/getappapi.index/rankList`
+####   `POST /api.php/getappapi.index/rankList`
 
 获取排行榜。
 
@@ -228,7 +228,7 @@ curl -X POST https://api.example.com/vodList \
 
 ### 3. 用户认证
 
-#### `POST /api.php/getappapi.index/appRegister`
+####   `POST /api.php/getappapi.index/appRegister`
 
 注册新用户账号。
 
@@ -254,7 +254,7 @@ curl -X POST https://api.example.com/vodList \
 }
 ```
 
-#### `POST /api.php/getappapi.index/appLogin`
+####   `POST /api.php/getappapi.index/appLogin`
 
 用户登录。
 
@@ -268,7 +268,7 @@ curl -X POST https://api.example.com/vodList \
 
 ### 4. 收藏功能
 
-#### `POST /api.php/getappapi.index/collect`
+####   `POST /api.php/getappapi.index/collect`
 
 添加/取消视频收藏。
 
@@ -281,7 +281,7 @@ curl -X POST https://api.example.com/vodList \
 
 **需要认证：** `app-user-token`
 
-#### `GET /api.php/getappapi.index/collectList`
+####   `GET /api.php/getappapi.index/collectList`
 
 获取用户收藏的视频列表。
 
@@ -296,7 +296,7 @@ curl -X POST https://api.example.com/vodList \
 
 ### 5. 评论系统
 
-#### `GET /api.php/getappapi.index/commentList`
+####   `GET /api.php/getappapi.index/commentList`
 
 获取视频评论列表。
 
@@ -325,7 +325,7 @@ curl -X POST https://api.example.com/vodList \
 }
 ```
 
-#### `POST /api.php/getappapi.index/sendComment`
+####   `POST /api.php/getappapi.index/sendComment`
 
 发表评论。
 
@@ -344,7 +344,7 @@ curl -X POST https://api.example.com/vodList \
 
 ### 6. 弹幕系统
 
-#### `GET /api.php/getappapi.index/danmuList`
+####   `GET /api.php/getappapi.index/danmuList`
 
 获取视频某集的弹幕列表。
 
@@ -354,7 +354,7 @@ curl -X POST https://api.example.com/vodList \
 | `vod_id` | int | ✅ | 视频 ID |
 | `url_position` | int | ✅ | 集数索引 |
 
-#### `POST /api.php/getappapi.index/sendDanmu`
+####   `POST /api.php/getappapi.index/sendDanmu`
 
 发送弹幕。
 
@@ -381,13 +381,13 @@ curl -X POST https://api.example.com/vodList \
 
 ### 7. 用户管理
 
-#### `GET /api.php/getappapi.index/userInfo`
+####   `GET /api.php/getappapi.index/userInfo`
 
 获取当前用户信息。
 
 **需要认证：** `app-user-token`
 
-#### `POST /api.php/getappapi.index/modifyPassword`
+####   `POST /api.php/getappapi.index/modifyPassword`
 
 修改密码。
 
@@ -397,7 +397,7 @@ curl -X POST https://api.example.com/vodList \
 | `old_password` | string | ✅ |
 | `new_password` | string | ✅ |
 
-#### `POST /api.php/getappapi.index/appAvatarUpload`
+####   `POST /api.php/getappapi.index/appAvatarUpload`
 
 上传用户头像。
 
@@ -410,7 +410,7 @@ curl -X POST https://api.example.com/vodList \
 
 ### 8. 公告通知
 
-#### `GET /api.php/getappapi.index/noticeList`
+####   `GET /api.php/getappapi.index/noticeList`
 
 获取所有公告列表。
 
@@ -419,7 +419,7 @@ curl -X POST https://api.example.com/vodList \
 |-------|------|------|
 | `page` | int | ✅ |
 
-#### `GET /api.php/getappapi.index/noticeDetail`
+####   `GET /api.php/getappapi.index/noticeDetail`
 
 获取公告详情。
 
@@ -432,7 +432,7 @@ curl -X POST https://api.example.com/vodList \
 
 ### 9. 用户反馈
 
-#### `POST /api.php/getappapi.index/suggest`
+####   `POST /api.php/getappapi.index/suggest`
 
 提交用户反馈。
 
@@ -441,7 +441,7 @@ curl -X POST https://api.example.com/vodList \
 |-------|------|------|
 | `content` | string | ✅ |
 
-#### `POST /api.php/getappapi.index/find`
+####   `POST /api.php/getappapi.index/find`
 
 求片功能。
 
@@ -451,7 +451,7 @@ curl -X POST https://api.example.com/vodList \
 | `name` | string | ✅ |
 | `remark` | string | ❌ |
 
-#### `POST /api.php/getappapi.index/requestUpdate`
+####   `POST /api.php/getappapi.index/requestUpdate`
 
 请求视频更新提醒。
 
@@ -464,7 +464,7 @@ curl -X POST https://api.example.com/vodList \
 
 ### 10. 会员系统
 
-#### `GET /api.php/getappapi.index/userVipCenter`
+####   `GET /api.php/getappapi.index/userVipCenter`
 
 获取 VIP 套餐列表。
 
@@ -482,7 +482,7 @@ curl -X POST https://api.example.com/vodList \
 }
 ```
 
-#### `POST /api.php/getappapi.index/userBuyVip`
+####   `POST /api.php/getappapi.index/userBuyVip`
 
 购买 VIP 会员。
 
@@ -495,7 +495,7 @@ curl -X POST https://api.example.com/vodList \
 
 ### 11. 积分奖励
 
-#### `GET /api.php/getappapi.index/userPointsLogs`
+####   `GET /api.php/getappapi.index/userPointsLogs`
 
 获取积分交易记录。
 
@@ -504,7 +504,7 @@ curl -X POST https://api.example.com/vodList \
 |-------|------|------|
 | `page` | int | ✅ |
 
-#### `POST /api.php/getappapi.index/watchRewardAd`
+####   `POST /api.php/getappapi.index/watchRewardAd`
 
 观看激励广告获取积分。
 
@@ -517,7 +517,7 @@ curl -X POST https://api.example.com/vodList \
 
 ##  身份验证
 
-#### Token 流程
+####   Token 流程
 
 ```
 1. 用户注册/登录
